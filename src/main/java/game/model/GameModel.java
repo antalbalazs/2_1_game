@@ -55,4 +55,53 @@ public class GameModel {
         }
     }
 
+    public boolean isGameOver() {
+        if (redWinCheck() || blueWinCheck()) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean redWinCheck() {
+        int count = 0;
+        for(int row = 0; row < grid.length; row++) {
+            for (int col = 0; col < grid[row].length; col++) {
+                if (grid[row][col] == 2) {
+                    count++;
+                }
+            }
+            if (count == 11) {
+                System.out.println("RED WON");
+                winnerName = p2name;
+                winnerSteps = p2steps;
+                return true;
+            }
+            else {
+                count = 0;
+            }
+        }
+        return false;
+    }
+
+    public boolean blueWinCheck() {
+        int count = 0;
+        for(int  row = 0; row < grid.length; row++) {
+            for (int col = 0; col < grid[row].length; col++) {
+                if (grid[col][row] == 1) {
+                    count++;
+                }
+            }
+            if (count == 11) {
+                System.out.println("BLUE WON");
+                winnerName = p1name;
+                winnerSteps = p1steps;
+                return true;
+            }
+            else {
+                count = 0;
+            }
+        }
+        return false;
+    }
+
 }
