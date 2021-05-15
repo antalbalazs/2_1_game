@@ -2,7 +2,9 @@ package game.fxml.Controller;
 
 import game.model.GameModel;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -32,6 +34,9 @@ public class GameController {
     private String currentPlayer;
     private boolean gameOver;
 
+    @FXML
+    private Label winnerlabel;
+
 
     public void initialize(){
         Platform.runLater(() -> {
@@ -47,6 +52,7 @@ public class GameController {
 
     public void resetgame(){
         gameOver = false;
+        winnerlabel.setText("");
         gameModel = new GameModel();
         p1steps.setText(0+"");
         p2steps.setText(0+"");
@@ -87,10 +93,7 @@ public class GameController {
                 switchCurrentPlayer(currentPlayer);
                 if (gameModel.isGameOver()) {
                     gameOver = true;
-                }
-
-                if(gameOver) {
-                    System.out.println(gameModel.getWinnerName()+" won the game in "+gameModel.getWinnerSteps()+" steps!");
+                    winnerlabel.setText(gameModel.getWinnerName() + " Won the game in " + gameModel.getWinnerSteps() + " steps.");
                 }
             }
             displaygrid();
@@ -121,5 +124,9 @@ public class GameController {
     public void setPlayersName(String p1name, String p2name) {
         this.p1nameString = p1name;
         this.p2nameString = p2name;
+    }
+
+    public void exitGame(ActionEvent actionEvent){
+        Platform.exit();
     }
 }

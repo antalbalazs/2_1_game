@@ -44,6 +44,7 @@ public class GameModel {
         if (field[row][col] == 0) {
             return true;
         }
+        log.info("The selected ({},{})field is not empty.",col+1, row+1);
         return false;
     }
 
@@ -51,15 +52,18 @@ public class GameModel {
         if(isEmptyField(row, col)) {
             if (currentPlayer.equals(p1name)) {
                 field[row][col] = 1;
+                log.info("{} has painted the selected ({},{})field blue.",currentPlayer,col+1,row+1);
             }
             else {
                 field[row][col] = 2;
+                log.info("{} has painted the selected ({},{})field red.",currentPlayer,col+1,row+1);
             }
         }
     }
 
     public boolean isGameOver() {
         if (redWinCheck() || blueWinCheck()) {
+            log.info("{} has won the game in {} steps.",winnerName,winnerSteps);
             return true;
         }
         return false;
@@ -74,7 +78,6 @@ public class GameModel {
                 }
             }
             if (count == 11) {
-                System.out.println("RED WON");
                 winnerName = p2name;
                 winnerSteps = p2steps;
                 return true;
@@ -95,7 +98,6 @@ public class GameModel {
                 }
             }
             if (count == 11) {
-                System.out.println("BLUE WON");
                 winnerName = p1name;
                 winnerSteps = p1steps;
                 return true;

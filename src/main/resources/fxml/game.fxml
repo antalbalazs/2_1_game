@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.fxml.Controller.GameController">
    <children>
       <Pane fx:id="Pane" layoutX="75.0" layoutY="75.0" prefHeight="550.0" prefWidth="550.0" />
-       <Text fx:id="p1name" layoutX="64.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
-       <Text fx:id="p2name" layoutX="614.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
-       <Text fx:id="p1steps" layoutX="64.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
-       <Text fx:id="p2steps" layoutX="614.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+       <Text fx:id="p1name" layoutX="64.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+       <Text fx:id="p2name" layoutX="614.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+       <Text fx:id="p1steps" layoutX="64.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+       <Text fx:id="p2steps" layoutX="614.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Label fx:id="winnerlabel" alignment="CENTER" contentDisplay="CENTER" layoutY="642.0" prefHeight="16.0" prefWidth="700.0" />
+      <Button layoutX="14.0" layoutY="660.0" mnemonicParsing="false" onAction="#resetgame" text="Reset" />
+      <Button layoutX="643.0" layoutY="660.0" mnemonicParsing="false" onAction="#exitGame" text="Exit" />
    </children>
 </Pane>
