@@ -1,11 +1,14 @@
 package game.model;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 @Data
 
+@Slf4j
+
 public class GameModel {
-    private int[][] grid;
+    private int[][] field;
 
     private String p1name;
 
@@ -22,7 +25,7 @@ public class GameModel {
 
 
     public GameModel() {
-        this.grid = new int[][]{
+        this.field = new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -38,7 +41,7 @@ public class GameModel {
     }
 
     public boolean isEmptyField(int row, int col) throws IndexOutOfBoundsException {
-        if (grid[row][col] == 0) {
+        if (field[row][col] == 0) {
             return true;
         }
         return false;
@@ -47,10 +50,10 @@ public class GameModel {
     public void move(String currentPlayer, int row, int col) {
         if(isEmptyField(row, col)) {
             if (currentPlayer.equals(p1name)) {
-                grid[row][col] = 1;
+                field[row][col] = 1;
             }
             else {
-                grid[row][col] = 2;
+                field[row][col] = 2;
             }
         }
     }
@@ -64,9 +67,9 @@ public class GameModel {
 
     public boolean redWinCheck() {
         int count = 0;
-        for(int row = 0; row < grid.length; row++) {
-            for (int col = 0; col < grid[row].length; col++) {
-                if (grid[row][col] == 2) {
+        for(int row = 0; row < field.length; row++) {
+            for (int col = 0; col < field[row].length; col++) {
+                if (field[row][col] == 2) {
                     count++;
                 }
             }
@@ -85,9 +88,9 @@ public class GameModel {
 
     public boolean blueWinCheck() {
         int count = 0;
-        for(int  row = 0; row < grid.length; row++) {
-            for (int col = 0; col < grid[row].length; col++) {
-                if (grid[col][row] == 1) {
+        for(int row = 0; row < field.length; row++) {
+            for (int col = 0; col < field[row].length; col++) {
+                if (field[col][row] == 1) {
                     count++;
                 }
             }

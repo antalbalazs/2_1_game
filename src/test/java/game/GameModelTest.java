@@ -19,7 +19,7 @@ public class GameModelTest {
         assertFalse(gameModel.isEmptyField(2, 1));
         assertTrue(gameModel.isEmptyField(0, 0));
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -42,7 +42,7 @@ public class GameModelTest {
 
     @Test
     void testMove() {
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -70,7 +70,7 @@ public class GameModelTest {
                 {2, 0, 2, 0, 2, 0, 2, 2, 2, 0, 2},
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 0, 2, 0, 2, 0, 2, 1, 2},
-                {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0}}, gameModel.getGrid());
+                {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0}}, gameModel.getField());
         gameModel.move("asd2", 0, 0);
         assertArrayEquals(new int[][]{
                 {1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -83,7 +83,7 @@ public class GameModelTest {
                 {2, 0, 2, 0, 2, 0, 2, 2, 2, 0, 2},
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 0, 2, 0, 2, 0, 2, 1, 2},
-                {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0}}, gameModel.getGrid());
+                {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0}}, gameModel.getField());
         gameModel.move("asd", 1, 1);
         assertArrayEquals(new int[][]{
                 {1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -96,7 +96,7 @@ public class GameModelTest {
                 {2, 0, 2, 0, 2, 0, 2, 2, 2, 0, 2},
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 0, 2, 0, 2, 0, 2, 1, 2},
-                {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0}}, gameModel.getGrid());
+                {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0}}, gameModel.getField());
         gameModel.move("asd2", 1, 1);
         assertArrayEquals(new int[][]{
                 {1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -109,12 +109,12 @@ public class GameModelTest {
                 {2, 0, 2, 0, 2, 0, 2, 2, 2, 0, 2},
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 0, 2, 0, 2, 0, 2, 1, 2},
-                {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0}}, gameModel.getGrid());
+                {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0}}, gameModel.getField());
     }
 
     @Test
     void testRedWinCheck(){
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -129,7 +129,7 @@ public class GameModelTest {
         });
         assertTrue(gameModel.redWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -144,7 +144,7 @@ public class GameModelTest {
         });
         assertFalse(gameModel.redWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -159,7 +159,7 @@ public class GameModelTest {
         });
         assertTrue(gameModel.redWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 2, 0, 1, 1, 0, 0},
@@ -174,7 +174,7 @@ public class GameModelTest {
         });
         assertFalse(gameModel.redWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -189,7 +189,7 @@ public class GameModelTest {
         });
         assertTrue(gameModel.redWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 0, 1, 2, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 1, 2, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 0, 1, 1, 0},
@@ -207,7 +207,7 @@ public class GameModelTest {
 
     @Test
     void testBlueWinCheck(){
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -222,7 +222,7 @@ public class GameModelTest {
         });
         assertTrue(gameModel.blueWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -237,7 +237,7 @@ public class GameModelTest {
         });
         assertFalse(gameModel.blueWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 1, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -252,7 +252,7 @@ public class GameModelTest {
         });
         assertTrue(gameModel.blueWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 0, 2, 0, 2, 0, 1, 1, 0, 0},
@@ -267,7 +267,7 @@ public class GameModelTest {
         });
         assertFalse(gameModel.blueWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1},
                 {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 1},
@@ -282,7 +282,7 @@ public class GameModelTest {
         });
         assertTrue(gameModel.blueWinCheck());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 0, 1, 2, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 1, 2, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 0, 1, 1, 0},
@@ -300,7 +300,7 @@ public class GameModelTest {
 
     @Test
     void testIsGameOver(){
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1},
                 {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 1},
@@ -315,7 +315,7 @@ public class GameModelTest {
         });
         assertTrue(gameModel.isGameOver());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 0, 1, 2, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 1, 2, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 0, 1, 1, 0},
@@ -330,7 +330,7 @@ public class GameModelTest {
         });
         assertFalse(gameModel.isGameOver());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -345,7 +345,7 @@ public class GameModelTest {
         });
         assertTrue(gameModel.isGameOver());
 
-        gameModel.setGrid(new int[][]{
+        gameModel.setField(new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
                 {2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2},
                 {0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0},
