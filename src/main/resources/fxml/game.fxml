@@ -3,4 +3,13 @@
 <?import javafx.scene.layout.*?>
 
 
-<Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.fxml.Controller.GameController" />
+<?import javafx.scene.text.Text?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.fxml.Controller.GameController">
+   <children>
+      <Pane fx:id="Pane" layoutX="75.0" layoutY="75.0" prefHeight="550.0" prefWidth="550.0" />
+       <Text fx:id="p1name" layoutX="125.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+       <Text fx:id="p2name" layoutX="647.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+       <Text fx:id="p1steps" layoutX="125.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+       <Text fx:id="p2steps" layoutX="647.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</Pane>
