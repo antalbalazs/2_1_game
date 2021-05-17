@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.fxml.Controller.GameController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.fxml.Controller.GameController">
    <children>
       <Pane fx:id="Pane" layoutX="75.0" layoutY="75.0" prefHeight="550.0" prefWidth="550.0" />
        <Text fx:id="p1name" layoutX="64.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" />
@@ -14,5 +15,6 @@
       <Label fx:id="winnerlabel" alignment="CENTER" contentDisplay="CENTER" layoutY="642.0" prefHeight="16.0" prefWidth="700.0" />
       <Button layoutX="14.0" layoutY="660.0" mnemonicParsing="false" onAction="#resetgame" text="Reset" />
       <Button layoutX="643.0" layoutY="660.0" mnemonicParsing="false" onAction="#exitGame" text="Exit" />
+      <Label fx:id="stopWatchLabel" layoutX="318.0" layoutY="24.0" prefHeight="16.0" prefWidth="64.0" text="00:00:00" />
    </children>
 </Pane>

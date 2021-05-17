@@ -1,0 +1,33 @@
+package game.result;
+
+import jpa.GenericJpaDao;
+
+import javax.transaction.Transactional;
+import java.util.List;
+
+/**
+ * DAO class for the {@link GameResult} entity.
+ */
+public class GameResultDao extends GenericJpaDao<GameResult> {
+
+    /**
+     * The constructor that accepts no arguments.
+     */
+    public GameResultDao() {
+        super(GameResult.class);
+    }
+
+    /**
+     * Returns the list of all results with respect to the number of steps
+     * and the time spent for playing the game.
+     *
+     * @return the list of all results with respect to the number of steps
+     * and the time spent for playing the game
+     */
+    @Transactional
+    public List<GameResult> findBest(int n) {
+        return entityManager.createQuery("SELECT r FROM GameResult r order by r.steps asc, r.duration asc", GameResult.class)
+                .setMaxResults(n)
+                .getResultList();
+    }
+}
