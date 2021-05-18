@@ -44,10 +44,10 @@ public class GameModel {
 
     /**
      * This function checks if a selected field is empty or not.
-     * @param row
-     * @param col
+     * @param row the rows of the field
+     * @param col the columns of the field
      * @return true if empty false if not empty
-     * @throws IndexOutOfBoundsException
+     * @throws IndexOutOfBoundsException when
      */
     public boolean isEmptyField(int row, int col) throws IndexOutOfBoundsException {
         if (field[row][col] == 0) {
@@ -59,9 +59,9 @@ public class GameModel {
 
     /**
      * This function paints the selected field according to the currentPlayer.
-     * @param currentPlayer
-     * @param row
-     * @param col
+     * @param currentPlayer the current player
+     * @param row amount of row
+     * @param col amunt of col
      */
     public void move(String currentPlayer, int row, int col) {
         if(isEmptyField(row, col)) {
@@ -78,7 +78,7 @@ public class GameModel {
 
     /**
      * This function checks if the game has ended.
-     * @return true or false
+     * @return true if a player won false if not
      */
     public boolean isGameOver() {
         if (redWinCheck() || blueWinCheck()) {
@@ -90,7 +90,7 @@ public class GameModel {
 
     /**
      * This function checks if the red player won the game.
-     * @return
+     * @return true if red won false if not
      */
     public boolean redWinCheck() {
         int count = 0;
@@ -114,7 +114,7 @@ public class GameModel {
 
     /**
      * This function checks if the blue player won the game.
-     * @return
+     * @return true if blue won false if not
      */
     public boolean blueWinCheck() {
         int count = 0;
