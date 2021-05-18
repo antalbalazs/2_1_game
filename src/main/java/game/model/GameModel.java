@@ -23,7 +23,9 @@ public class GameModel {
     private int winnerSteps;
 
 
-
+    /**
+     * This function represents the game field.
+      */
     public GameModel() {
         this.field = new int[][]{
                 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
@@ -40,6 +42,13 @@ public class GameModel {
         };
     }
 
+    /**
+     * This function checks if a selected field is empty or not.
+     * @param row
+     * @param col
+     * @return true if empty false if not empty
+     * @throws IndexOutOfBoundsException
+     */
     public boolean isEmptyField(int row, int col) throws IndexOutOfBoundsException {
         if (field[row][col] == 0) {
             return true;
@@ -48,6 +57,12 @@ public class GameModel {
         return false;
     }
 
+    /**
+     * This function paints the selected field according to the currentPlayer.
+     * @param currentPlayer
+     * @param row
+     * @param col
+     */
     public void move(String currentPlayer, int row, int col) {
         if(isEmptyField(row, col)) {
             if (currentPlayer.equals(p1name)) {
@@ -61,6 +76,10 @@ public class GameModel {
         }
     }
 
+    /**
+     * This function checks if the game has ended.
+     * @return true or false
+     */
     public boolean isGameOver() {
         if (redWinCheck() || blueWinCheck()) {
             log.info("{} has won the game in {} steps.",winnerName,winnerSteps);
@@ -69,6 +88,10 @@ public class GameModel {
         return false;
     }
 
+    /**
+     * This function checks if the red player won the game.
+     * @return
+     */
     public boolean redWinCheck() {
         int count = 0;
         for(int row = 0; row < field.length; row++) {
@@ -89,6 +112,10 @@ public class GameModel {
         return false;
     }
 
+    /**
+     * This function checks if the blue player won the game.
+     * @return
+     */
     public boolean blueWinCheck() {
         int count = 0;
         for(int row = 0; row < field.length; row++) {

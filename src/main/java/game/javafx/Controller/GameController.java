@@ -1,4 +1,4 @@
-package game.fxml.Controller;
+package game.javafx.Controller;
 
 import game.model.GameModel;
 import game.result.GameResult;
