@@ -7,7 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.javafx.Controller.GameController">
    <children>
-      <Pane fx:id="Pane" layoutX="75.0" layoutY="75.0" prefHeight="550.0" prefWidth="550.0" />
+      <Pane fx:id="Pane" layoutX="75.0" layoutY="75.0" prefHeight="552.0" prefWidth="552.0" />
        <Text fx:id="p1name" layoutX="64.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" />
        <Text fx:id="p2name" layoutX="614.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" />
        <Text fx:id="p1steps" layoutX="64.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" />

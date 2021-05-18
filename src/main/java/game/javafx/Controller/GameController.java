@@ -84,6 +84,7 @@ public class GameController {
     }
 
     public void displaygrid(){
+        Pane.setStyle("-fx-border-color: black");
         for (int i = 1; i < 550; i+=550/11) {
             for (int j = 1; j < 550; j+=550/11) {
                 Rectangle r = new Rectangle(i, j, 550/11, 550/11);

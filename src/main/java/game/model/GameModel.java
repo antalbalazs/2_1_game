@@ -7,6 +7,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 
+/**
+ * This class represents the model.
+ */
 public class GameModel {
     private int[][] field;
 
